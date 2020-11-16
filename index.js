@@ -39,8 +39,6 @@ function checkCollision(rock) {
     if ((rockLeftEdge<=dodgerLeftEdge&&rockRightEdge>=dodgerLeftEdge)
     || (rockLeftEdge>=dodgerLeftEdge&&rockRightEdge<=dodgerRightEdge)
     || (rockLeftEdge<=dodgerRightEdge&&rockRightEdge>=dodgerRightEdge))
-                {
-                  ROCK.forEach(rock => rock.style.left = '-20px')
       return true
     }else {
       return false
