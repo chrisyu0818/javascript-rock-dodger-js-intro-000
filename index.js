@@ -86,7 +86,7 @@ function createRock(x) {
      */
      if(top < 380) {
       top += 2;
-      rock.style.top = top + 'px';
+      rock.style.top = top + 'px'
     }
     /**
      * But if the rock *has* reached the bottom of the GAME,
@@ -95,14 +95,14 @@ function createRock(x) {
      else {
       window.cancelAnimationFrame(moveRock);
       top = 0;
-      rock.remove();
-      ROCKS.shift();
-      return rock;
+      rock.remove()
+      ROCKS.shift()
+      return rock
     }
 
-    window.requestAnimationFrame(moveRock);
+    window.requestAnimationFrame(moveRock)
   }
-   window.requestAnimationFrame(moveRock);
+   window.requestAnimationFrame(moveRock)
 
 
   // We should kick off the animation of the rock around here.
