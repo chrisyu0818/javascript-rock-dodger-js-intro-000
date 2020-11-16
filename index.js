@@ -40,8 +40,6 @@ function checkCollision(rock) {
     || (rockLeftEdge>=dodgerLeftEdge&&rockRightEdge<=dodgerRightEdge)
     || (rockLeftEdge<=dodgerRightEdge&&rockRightEdge>=dodgerRightEdge))
       {return true
-    }else {
-      return false
     }
   }
 }
@@ -67,42 +65,19 @@ function createRock(x) {
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
    */}
-  function moveRock() {
-    // implement me!
-    // (use the comments below to guide you!)
-    /**
-     * If a rock collides with the DODGER,
-     * we should call endGame().
-     */
-     if(checkCollision(rock)) {
-       var top = 0
+   function moveRock() {
+     rock.style.top = `${top += 2}px`;
+      if (checkCollision(rock)) {
+        return endGame();
+      } if (top < GAME_HEIGHT) {
+       window.requestAnimationFrame(moveRock)
+       } else {
        rock.remove()
-       ROCKS.splice(0, ROCKS.length)
-       return endGame()
-     }
-    /**
-     * Otherwise, if the rock hasn't reached the bottom of
-     * the GAME, we want to move it again.
-     */
-     if(top < 380) {
-      top += 2;
-      rock.style.top = top + 'px'
-    }
-    /**
-     * But if the rock *has* reached the bottom of the GAME,
-     * we should remove the rock from the DOM.
-     */
-     else {
-      window.cancelAnimationFrame(moveRock);
-      top = 0;
-      rock.remove()
-      ROCKS.shift()
-      return rock
+}
     }
 
     window.requestAnimationFrame(moveRock)
-  }
-   window.requestAnimationFrame(moveRock)
+  
 
 
   // We should kick off the animation of the rock around here.
