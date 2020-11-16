@@ -36,8 +36,8 @@ function checkCollision(rock) {
     // FIXME: The rock is 20 pixel's wide -- how do we get the right edge?
     const rockRightEdge = rockRightEdge + 20;
 
-    if ((rockLeftEdge<=dodgerLeftEdge&&rockRightEdge>=dodgerLeftEdge) 
-    || (rockLeftEdge>=dodgerLeftEdge&&rockRightEdge<=dodgerRightEdge) 
+    if ((rockLeftEdge<=dodgerLeftEdge&&rockRightEdge>=dodgerLeftEdge)
+    || (rockLeftEdge>=dodgerLeftEdge&&rockRightEdge<=dodgerRightEdge)
     || (rockLeftEdge<=dodgerRightEdge&&rockRightEdge>=dodgerRightEdge))
                 {
                   ROCK.forEach(rock => rock.style.left = '-20px')
@@ -103,9 +103,9 @@ function createRock(x) {
     }
 
     window.requestAnimationFrame(moveRock);
-  }	  
+  }
    window.requestAnimationFrame(moveRock);
-  
+
 
   // We should kick off the animation of the rock around here.
 
